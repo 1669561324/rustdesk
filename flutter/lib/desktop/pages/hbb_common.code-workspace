@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "../../../../../../rustdesk_common/hbb_common"
+		},
+		{
+			"path": "../../../.."
+		}
+	],
+	"settings": {}
+}

@@ -89,31 +89,31 @@ class _DesktopTabPageState extends State<DesktopTabPage> {
     super.dispose();
   }
 
-  @override
-  Widget build(BuildContext context) {
-    final tabWidget = Container(
-        child: Scaffold(
-            backgroundColor: Theme.of(context).colorScheme.background,
-            body: DesktopTab(
-              controller: tabController,
-              tail: Offstage(
-                offstage: bind.isIncomingOnly() || bind.isDisableSettings(),
-                child: ActionIcon(
-                  message: 'Settings',
-                  icon: IconFont.menu,
-                  onTap: DesktopTabPage.onAddSetting,
-                  isClose: false,
-                ),
-              ),
-            )));
-    return isMacOS || kUseCompatibleUiMode
-        ? tabWidget
-        : Obx(
-            () => DragToResizeArea(
-              resizeEdgeSize: stateGlobal.resizeEdgeSize.value,
-              enableResizeEdges: windowManagerEnableResizeEdges,
-              child: tabWidget,
-            ),
-          );
-  }
+  // @override
+  // Widget build(BuildContext context) {
+  //   final tabWidget = Container(
+  //       child: Scaffold(
+  //           backgroundColor: Theme.of(context).colorScheme.background,
+  //           body: DesktopTab(
+  //             controller: tabController,
+  //             tail: Offstage(
+  //               offstage: bind.isIncomingOnly() || bind.isDisableSettings(),
+  //               child: ActionIcon(
+  //                 message: 'Settings',
+  //                 icon: IconFont.menu,
+  //                 onTap: DesktopTabPage.onAddSetting,
+  //                 isClose: false,
+  //               ),
+  //             ),
+  //           )));
+  //   return isMacOS || kUseCompatibleUiMode
+  //       ? tabWidget
+  //       : Obx(
+  //           () => DragToResizeArea(
+  //             resizeEdgeSize: stateGlobal.resizeEdgeSize.value,
+  //             enableResizeEdges: windowManagerEnableResizeEdges,
+  //             child: tabWidget,
+  //           ),
+  //         );
+  // }
 }
