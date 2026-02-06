@@ -1086,6 +1086,7 @@ class _SafetyState extends State<_Safety> with AutomaticKeepAliveClientMixin {
           List<Widget> radios = passwordValues
               .map((value) => _Radio<String>(
                     context,
+                    enabled：false,
                     value: value,
                     groupValue: currentValue,
                     label: value,
@@ -1153,6 +1154,7 @@ class _SafetyState extends State<_Safety> with AutomaticKeepAliveClientMixin {
                 child: Row(
               children: [
                 Checkbox(
+                  enabled：false,
                         value: model.allowNumericOneTimePassword,
                         onChanged: isNumOPTChangable
                             ? (bool? v) {
@@ -1190,9 +1192,9 @@ class _SafetyState extends State<_Safety> with AutomaticKeepAliveClientMixin {
           final usePassword = model.approveMode != 'click';
 
           final isApproveModeFixed = isOptionFixed(kOptionApproveMode);
-          return _Card(title: 'Password', children: [
+          return _Card(title: 'Password',enabled：false, children: [
             ComboBox(
-              enabled: !locked && !isApproveModeFixed,
+              enabled: false,
               keys: modeKeys,
               values: modeValues,
               initialKey: modeInitialKey,
