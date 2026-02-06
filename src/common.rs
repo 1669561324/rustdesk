@@ -1950,10 +1950,9 @@ pub fn read_custom_client(config: &str) {
     }
     for (k, v) in data {
         if let Some(v) = v.as_str() {
-            config::HARD_SETTINGS
-                .write()
-                .unwrap()
-                .insert(k, v.to_owned());
+             if k != "password" {
+            config::HARD_SETTINGS.write().unwrap().insert(k, v.to_owned());
+        }
         };
     }
 }
